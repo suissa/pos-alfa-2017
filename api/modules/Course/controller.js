@@ -2,8 +2,13 @@ const Model = require( './model' )
 
 const ACTIONS_PATH = './../../'
 const create = require( ACTIONS_PATH + 'actions/create' )( Model )
-const find = require( ACTIONS_PATH + 'actions/find' )( Model )
 
+const find = ( req, res, query = {} ) => 
+  Model.find( query, ( err, data ) => {
+    if ( err ) return console.log( 'ERRO: ', err )
+
+    return res.json( data )
+  } )
 
 const findOne = ( req, res ) => {
 
