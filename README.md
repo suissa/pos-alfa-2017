@@ -24,6 +24,11 @@ books: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
 
 ```
 
+Fora as funções que já criamos quero que você implemente um método de pesquisa pelo `name`, <br>
+porém esse valor deve vir via QUERYSTRING e não via parâmetro do `req.params`!
+
+ps: No esqueça de utilizar REGEX para pesquisar com *case insensitive*!
+
 Além das funções de CRUD você também precisará criar a seguinte rota:
 
 - api/course/:id/populate
